@@ -101,6 +101,7 @@ export function SearchBar({ className }: { className?: string }) {
     "years",
     "zee",
     ]
+    const nSuggestion = 5;
 
   // Update suggestions based on the query
   useEffect(() => {
@@ -149,10 +150,10 @@ export function SearchBar({ className }: { className?: string }) {
           className={cn(
             "absolute mt-2 w-full rounded-md border shadow-lg",
             // Use design tokens from your UI library (replace these if necessary)
-            "border-input bg-background"
+            "border-input bg-background bg-black z-50"
           )}
         >
-          {suggestions.map((suggestion, index) => (
+          {suggestions.slice(0, nSuggestion).map((suggestion, index) => (
             <li
               key={index}
               onClick={() => handleSuggestionClick(suggestion)}
