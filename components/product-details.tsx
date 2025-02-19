@@ -19,7 +19,6 @@ export function ProductDetails({ product }: { product: MasterProduct }) {
   );
 
   const sortedProducts = [...product.products].sort((a, b) => a.price - b.price);
-  const lowestPrice = sortedProducts[0].price;
 
   const formatPrice = (price: number) =>
     new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' })
